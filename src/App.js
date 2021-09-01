@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { CharacterContextProvider } from "./Components/CharacterContext";
+import PrimaryCard from "./Components/PrimaryCard";
+import CharacterList from "./Components/CharacterList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CharacterContextProvider>
+      <div className="App h-full ">
+        <div className="flex bg-blue-200 pt-12 pb-8 items-center justify-center">
+          <PrimaryCard />
+        </div>
+        <CharacterList />
+      </div>
+    </CharacterContextProvider>
   );
 }
 
